@@ -25,8 +25,9 @@
             "32743323-8440-495b-93d5-3b2ab406143e"
         ],
         "children": [
-            "38f0ea5a-75bb-4270-b1df-3bbd67ff69f0",
-            "f71497b8-83b1-41f6-b13b-56bf726b3876"
+            "e0c53bb4-2fa2-41e3-8481-c8e263c2e676",
+            "3d477d21-1a08-4ec5-bb23-a63cc4262b90",
+            "38f0ea5a-75bb-4270-b1df-3bbd67ff69f0"
         ]
     },
     "a9dcfa6e-c397-4398-bfb1-d12bd1a52308": {
@@ -59,7 +60,7 @@
             ],
             "conditional": [
                 "() => {",
-                "    return notepad.script.length > 0;",
+                "    return true; // notepad.script.length > 0;",
                 "}"
             ]
         },
@@ -72,7 +73,7 @@
         "options": {
             "getWords": [
                 "(callback) => {",
-                "    callback(notepad.script.pop());",
+                "    callback(notepad.script[notepad.response]);",
                 "}"
             ],
             "onWord": [
@@ -83,14 +84,47 @@
         "asset-pack": "core",
         "parent": "d742178f-3224-412c-80f0-f2bb78bbfa73"
     },
-    "f71497b8-83b1-41f6-b13b-56bf726b3876": {
-        "id": "f71497b8-83b1-41f6-b13b-56bf726b3876",
-        "class": "TimeoutJs",
+    "3d477d21-1a08-4ec5-bb23-a63cc4262b90": {
+        "id": "3d477d21-1a08-4ec5-bb23-a63cc4262b90",
+        "class": "Listen",
         "name": "",
         "options": {
-            "getTime": [
+            "getOptions": [
                 "() => {",
-                "    return 5000;",
+                "    let options = {",
+                "        heyJibo: false,",
+                "        detectEnd: false,",
+                "        incremental: false,",
+                "        authenticateSpeaker: ''",
+                "    }",
+                "    console.log(\"setting up\")",
+                "    return options;",
+                "}"
+            ],
+            "rule": "helloworld.rule",
+            "onResult": [
+                "(listener) => {",
+                "    listener.on('cloud', function(asrResult, speakerIds) {",
+                "      console.log(\"hearing\")",
+                "          if (asrResult && asrResult.NLParse){",
+                "              notepad.response = asrResult.NLParse.response;",
+                "              console.log(asrResult.NLParse)",
+                "          }",
+                "    });",
+                "}"
+            ]
+        },
+        "asset-pack": "core",
+        "parent": "d742178f-3224-412c-80f0-f2bb78bbfa73"
+    },
+    "e0c53bb4-2fa2-41e3-8481-c8e263c2e676": {
+        "id": "e0c53bb4-2fa2-41e3-8481-c8e263c2e676",
+        "class": "PlayAnimation",
+        "name": "",
+        "options": {
+            "animPath": "anger.keys",
+            "config": [
+                "(animation) => {",
                 "}"
             ]
         },

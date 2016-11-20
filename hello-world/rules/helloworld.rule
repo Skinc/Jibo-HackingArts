@@ -1,1 +1,18 @@
-TopRule = $* (hello world){what='hello'} $*;
+TopRule = (
+$line1{response='response1'}|
+$line2{response='response2'}|
+$line3{response='response3'}|
+$line4{response='response4'}|
+$line5{response='response5'}|
+$line6{response='response6'}|
+$line7{response='response7'}|
+$line8{response='response8'}
+);
+line1= start;
+line2= frogs lay their eggs in water they lay a lot of eggs hundreds and hundreds at one time the eggs float near the top of the water;
+line3= frog tadpoles hatch from the frog eggs the tadpoles have tails but they do not have legs;
+line4= soon the frog tadpoles have legs the tadpoles tails soon shrink up and fall off these tadpoles will be frogs;
+line5= the frogs stay near water as adults frogs need to be near water;
+line6= you can tell a frog from a toad look at the frog a frog has smooth wet skin;
+line7= look at the frog it can make a sound in its throat croak croak;
+line8= now you know how frogs and toads are the same;
