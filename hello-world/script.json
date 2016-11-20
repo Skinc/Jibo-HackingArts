@@ -1,5 +1,1 @@
-[
-  "hello world",
-  "I am a robot",
-  "hear me beep"
-]
+{response1: "Hi! Good and you?", response2: " You too!" }

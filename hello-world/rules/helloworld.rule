@@ -1,1 +1,39 @@
-TopRule = $* (hello world){what='hello'} $*;
+#  TopRule =  (
+#     $line1 {response='How are you?'} |
+#     $line2  {response='Doing well!'}
+# );
+#
+# line1 = hello old friend;
+# line2 = good and you;
+TopRule = (
+$line1 {response='response1}|
+$line2 {response='response2}
+);
+line1= hello how are you;
+line2= great good to see you again;
+#  TopRule =  (
+# $line1 | $line2
+# );
+#
+# line1 = hello old friend{response='response1'} ;
+# line2 = reserve me a hotel{response='response2'};
+
+# TopRule = $* (
+
+#             $h1 {what='1'} |
+#             $h2 {what='2'}
+# ) $*;
+#
+# h1 = (hello){what='hello'} $* (bye){what='bye'}
+# h2 = (hi){what='hello'} $* (bye){what='bye'}
+
+# TopRule = $* (
+#     $flight {book='air'} {city = flight._city}{state = flight._state} |
+#     $hotel  {book='lodging'} {city = hotel._city}{state = hotel._state}
+# ) $*;
+#
+# flight = $reserve $* flight $* $location {_city = location._city}{_state = location._state};
+# hotel = $reserve $* hotel $* $location {_city = location._city}{_state = location._state};
+#
+# location = $factory:city_state{_city = city_state._city}{_state = city_state._state};
+# reserve = reserve | order | book;

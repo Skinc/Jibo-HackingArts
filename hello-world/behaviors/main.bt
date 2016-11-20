@@ -25,6 +25,7 @@
             "32743323-8440-495b-93d5-3b2ab406143e"
         ],
         "children": [
+            "bab0fb6d-7a77-40f8-9119-10f83bbb653a",
             "38f0ea5a-75bb-4270-b1df-3bbd67ff69f0",
             "f71497b8-83b1-41f6-b13b-56bf726b3876"
         ]
@@ -36,6 +37,7 @@
         "options": {
             "exec": [
                 "(succeed, fail) => {",
+                "    console.log(\"starting\")",
                 "    console.log(__dirname);",
                 "    ",
                 "    notepad.script = require('fs').readFileSync(__dirname + '/../script.json');",
@@ -91,6 +93,39 @@
             "getTime": [
                 "() => {",
                 "    return 5000;",
+                "}"
+            ]
+        },
+        "asset-pack": "core",
+        "parent": "d742178f-3224-412c-80f0-f2bb78bbfa73"
+    },
+    "bab0fb6d-7a77-40f8-9119-10f83bbb653a": {
+        "id": "bab0fb6d-7a77-40f8-9119-10f83bbb653a",
+        "class": "Listen",
+        "name": "",
+        "options": {
+            "getOptions": [
+                "() => {",
+                "    let options = {",
+                "        heyJibo: false,",
+                "        detectEnd: false,",
+                "        incremental: false,",
+                "        authenticateSpeaker: ''",
+                "    }",
+                "    console.log(\"setting up\")",
+                "    return options;",
+                "}"
+            ],
+            "rule": "helloworld.rule",
+            "onResult": [
+                "(listener) => {",
+                "    listener.on('cloud', function(asrResult, speakerIds) {",
+                "      console.log(\"hearing\")",
+                "          if (asrResult && asrResult.NLParse){",
+                "              notepad.response = asrResult.NLParse.response;",
+                "              console.log(notepad.response)",
+                "          }",
+                "    });",
                 "}"
             ]
         },
