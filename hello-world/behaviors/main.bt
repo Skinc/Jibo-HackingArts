@@ -26,7 +26,8 @@
         ],
         "children": [
             "bab0fb6d-7a77-40f8-9119-10f83bbb653a",
-            "38f0ea5a-75bb-4270-b1df-3bbd67ff69f0"
+            "38f0ea5a-75bb-4270-b1df-3bbd67ff69f0",
+            "4a8e4f4a-2ecb-4a25-8119-112b4a198f94"
         ]
     },
     "a9dcfa6e-c397-4398-bfb1-d12bd1a52308": {
@@ -115,5 +116,65 @@
         },
         "asset-pack": "core",
         "parent": "d742178f-3224-412c-80f0-f2bb78bbfa73"
+    },
+    "4a8e4f4a-2ecb-4a25-8119-112b4a198f94": {
+        "id": "4a8e4f4a-2ecb-4a25-8119-112b4a198f94",
+        "class": "Switch",
+        "name": "",
+        "options": {},
+        "asset-pack": "core",
+        "parent": "d742178f-3224-412c-80f0-f2bb78bbfa73",
+        "children": [
+            "d1905d80-e5a1-4106-aebf-b3270899bb4b",
+            "cde9b9d1-941b-4faa-b959-87fd8a2d88c6"
+        ]
+    },
+    "cde9b9d1-941b-4faa-b959-87fd8a2d88c6": {
+        "id": "cde9b9d1-941b-4faa-b959-87fd8a2d88c6",
+        "class": "PlayAnimation",
+        "name": "",
+        "options": {
+            "animPath": "anger.keys",
+            "config": [
+                "(animation) => {",
+                "}"
+            ]
+        },
+        "asset-pack": "core",
+        "parent": "4a8e4f4a-2ecb-4a25-8119-112b4a198f94"
+    },
+    "d1905d80-e5a1-4106-aebf-b3270899bb4b": {
+        "id": "d1905d80-e5a1-4106-aebf-b3270899bb4b",
+        "class": "PlayAnimation",
+        "name": "",
+        "options": {
+            "animPath": "flashback.keys",
+            "config": [
+                "(animation) => {",
+                "}"
+            ]
+        },
+        "asset-pack": "core",
+        "parent": "4a8e4f4a-2ecb-4a25-8119-112b4a198f94",
+        "decorators": [
+            "294dd726-b4fb-4ea7-8771-1d5e3e65eb21"
+        ]
+    },
+    "294dd726-b4fb-4ea7-8771-1d5e3e65eb21": {
+        "id": "294dd726-b4fb-4ea7-8771-1d5e3e65eb21",
+        "class": "FailOnCondition",
+        "name": "",
+        "options": {
+            "init": [
+                "() => {",
+                "}"
+            ],
+            "conditional": [
+                "() => {",
+                "    return notepad.response == \"response1\";",
+                "}"
+            ]
+        },
+        "asset-pack": "core"
     }
 }
