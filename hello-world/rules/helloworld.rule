@@ -1,6 +1,6 @@
 TopRule = (
-$line1 {response='response1'}|
-$line2 {response='response2'}
+$line1 {response='response1'}{emotion='joy'}|
+$line2 {response='response2'}{emotion='fear'}
 );
 line1= hello how are you;
 line2= great good to see you again;

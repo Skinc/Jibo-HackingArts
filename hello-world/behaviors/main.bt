@@ -108,6 +108,7 @@
                 "      console.log(\"hearing\")",
                 "          if (asrResult && asrResult.NLParse){",
                 "              notepad.response = asrResult.NLParse.response;",
+                "              notepad.emotion = asrResult.NLParse.emotion;",
                 "              console.log(notepad.response)",
                 "          }",
                 "    });",
@@ -125,8 +126,13 @@
         "asset-pack": "core",
         "parent": "d742178f-3224-412c-80f0-f2bb78bbfa73",
         "children": [
+            "3c33a5db-80ea-434b-b31f-a1cefb15f522",
             "d1905d80-e5a1-4106-aebf-b3270899bb4b",
-            "cde9b9d1-941b-4faa-b959-87fd8a2d88c6"
+            "cde9b9d1-941b-4faa-b959-87fd8a2d88c6",
+            "34c42b08-8012-4f61-8c54-a9190c26dbce",
+            "77fe8909-73a9-4cfc-91c1-57753159de99",
+            "140353cb-6d17-4c8f-856e-419d82131a0e",
+            "c5dc5b17-58c0-472a-a506-70f95c7363dc"
         ]
     },
     "cde9b9d1-941b-4faa-b959-87fd8a2d88c6": {
@@ -141,7 +147,10 @@
             ]
         },
         "asset-pack": "core",
-        "parent": "4a8e4f4a-2ecb-4a25-8119-112b4a198f94"
+        "parent": "4a8e4f4a-2ecb-4a25-8119-112b4a198f94",
+        "decorators": [
+            "a444e14c-5dbc-4b3c-b02a-42881c84912a"
+        ]
     },
     "d1905d80-e5a1-4106-aebf-b3270899bb4b": {
         "id": "d1905d80-e5a1-4106-aebf-b3270899bb4b",
@@ -171,10 +180,197 @@
             ],
             "conditional": [
                 "() => {",
-                "    return notepad.response == \"response1\";",
+                "    return notepad.emotion != \"flashback\";",
                 "}"
             ]
         },
         "asset-pack": "core"
+    },
+    "a444e14c-5dbc-4b3c-b02a-42881c84912a": {
+        "id": "a444e14c-5dbc-4b3c-b02a-42881c84912a",
+        "class": "FailOnCondition",
+        "name": "",
+        "options": {
+            "init": [
+                "() => {",
+                "}"
+            ],
+            "conditional": [
+                "() => {",
+                "    return notepad.emotion != \"anger\";",
+                "}"
+            ]
+        },
+        "asset-pack": "core"
+    },
+    "16091a87-0cbd-4dce-8eb3-7b18cd62d2d3": {
+        "id": "16091a87-0cbd-4dce-8eb3-7b18cd62d2d3",
+        "class": "FailOnCondition",
+        "name": "",
+        "options": {
+            "init": [
+                "() => {",
+                "}"
+            ],
+            "conditional": [
+                "() => {",
+                "    return notepad.emotion != \"joy\";",
+                "}"
+            ]
+        },
+        "asset-pack": "core"
+    },
+    "34c42b08-8012-4f61-8c54-a9190c26dbce": {
+        "id": "34c42b08-8012-4f61-8c54-a9190c26dbce",
+        "class": "PlayAnimation",
+        "name": "",
+        "options": {
+            "animPath": "joy.keys",
+            "config": [
+                "(animation) => {",
+                "}"
+            ]
+        },
+        "asset-pack": "core",
+        "parent": "4a8e4f4a-2ecb-4a25-8119-112b4a198f94",
+        "decorators": [
+            "16091a87-0cbd-4dce-8eb3-7b18cd62d2d3"
+        ]
+    },
+    "44df537a-74a7-4971-b668-489d62aeaa1d": {
+        "id": "44df537a-74a7-4971-b668-489d62aeaa1d",
+        "class": "FailOnCondition",
+        "name": "",
+        "options": {
+            "init": [
+                "() => {",
+                "}"
+            ],
+            "conditional": [
+                "() => {",
+                "    return notepad.emotion != \"fear\";",
+                "}"
+            ]
+        },
+        "asset-pack": "core"
+    },
+    "77fe8909-73a9-4cfc-91c1-57753159de99": {
+        "id": "77fe8909-73a9-4cfc-91c1-57753159de99",
+        "class": "PlayAnimation",
+        "name": "",
+        "options": {
+            "animPath": "fear.keys",
+            "config": [
+                "(animation) => {",
+                "}"
+            ]
+        },
+        "asset-pack": "core",
+        "parent": "4a8e4f4a-2ecb-4a25-8119-112b4a198f94",
+        "decorators": [
+            "44df537a-74a7-4971-b668-489d62aeaa1d"
+        ]
+    },
+    "be2d191b-ec6b-4cfc-a519-bf3b4649adcc": {
+        "id": "be2d191b-ec6b-4cfc-a519-bf3b4649adcc",
+        "class": "FailOnCondition",
+        "name": "",
+        "options": {
+            "init": [
+                "() => {",
+                "}"
+            ],
+            "conditional": [
+                "() => {",
+                "    return notepad.emotion != \"inquisitive\";",
+                "}"
+            ]
+        },
+        "asset-pack": "core"
+    },
+    "3c33a5db-80ea-434b-b31f-a1cefb15f522": {
+        "id": "3c33a5db-80ea-434b-b31f-a1cefb15f522",
+        "class": "PlayAnimation",
+        "name": "",
+        "options": {
+            "animPath": "inquisitive.keys",
+            "config": [
+                "(animation) => {",
+                "}"
+            ]
+        },
+        "asset-pack": "core",
+        "parent": "4a8e4f4a-2ecb-4a25-8119-112b4a198f94",
+        "decorators": [
+            "be2d191b-ec6b-4cfc-a519-bf3b4649adcc"
+        ]
+    },
+    "a29902c6-0fe2-4075-9708-b48ba68b84ed": {
+        "id": "a29902c6-0fe2-4075-9708-b48ba68b84ed",
+        "class": "FailOnCondition",
+        "name": "",
+        "options": {
+            "init": [
+                "() => {",
+                "}"
+            ],
+            "conditional": [
+                "() => {",
+                "    return notepad.emotion != \"sadness\";",
+                "}"
+            ]
+        },
+        "asset-pack": "core"
+    },
+    "140353cb-6d17-4c8f-856e-419d82131a0e": {
+        "id": "140353cb-6d17-4c8f-856e-419d82131a0e",
+        "class": "PlayAnimation",
+        "name": "",
+        "options": {
+            "animPath": "sadness.keys",
+            "config": [
+                "(animation) => {",
+                "}"
+            ]
+        },
+        "asset-pack": "core",
+        "parent": "4a8e4f4a-2ecb-4a25-8119-112b4a198f94",
+        "decorators": [
+            "a29902c6-0fe2-4075-9708-b48ba68b84ed"
+        ]
+    },
+    "9636ee94-f98e-434d-8867-4511028efc0d": {
+        "id": "9636ee94-f98e-434d-8867-4511028efc0d",
+        "class": "FailOnCondition",
+        "name": "",
+        "options": {
+            "init": [
+                "() => {",
+                "}"
+            ],
+            "conditional": [
+                "() => {",
+                "    return notepad.emotion != \"shy\";",
+                "}"
+            ]
+        },
+        "asset-pack": "core"
+    },
+    "c5dc5b17-58c0-472a-a506-70f95c7363dc": {
+        "id": "c5dc5b17-58c0-472a-a506-70f95c7363dc",
+        "class": "PlayAnimation",
+        "name": "",
+        "options": {
+            "animPath": "shy.keys",
+            "config": [
+                "(animation) => {",
+                "}"
+            ]
+        },
+        "asset-pack": "core",
+        "parent": "4a8e4f4a-2ecb-4a25-8119-112b4a198f94",
+        "decorators": [
+            "9636ee94-f98e-434d-8867-4511028efc0d"
+        ]
     }
 }
