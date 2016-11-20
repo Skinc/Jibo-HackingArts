@@ -26,8 +26,7 @@
         ],
         "children": [
             "bab0fb6d-7a77-40f8-9119-10f83bbb653a",
-            "38f0ea5a-75bb-4270-b1df-3bbd67ff69f0",
-            "f71497b8-83b1-41f6-b13b-56bf726b3876"
+            "38f0ea5a-75bb-4270-b1df-3bbd67ff69f0"
         ]
     },
     "a9dcfa6e-c397-4398-bfb1-d12bd1a52308": {
@@ -37,7 +36,6 @@
         "options": {
             "exec": [
                 "(succeed, fail) => {",
-                "    console.log(\"starting\")",
                 "    console.log(__dirname);",
                 "    ",
                 "    notepad.script = require('fs').readFileSync(__dirname + '/../script.json');",
@@ -61,7 +59,7 @@
             ],
             "conditional": [
                 "() => {",
-                "    return notepad.script.length > 0;",
+                "    return true;",
                 "}"
             ]
         },
@@ -74,25 +72,11 @@
         "options": {
             "getWords": [
                 "(callback) => {",
-                "    callback(notepad.script.pop());",
+                "    callback(notepad.script[notepad.response]);",
                 "}"
             ],
             "onWord": [
                 "(word) => {",
-                "}"
-            ]
-        },
-        "asset-pack": "core",
-        "parent": "d742178f-3224-412c-80f0-f2bb78bbfa73"
-    },
-    "f71497b8-83b1-41f6-b13b-56bf726b3876": {
-        "id": "f71497b8-83b1-41f6-b13b-56bf726b3876",
-        "class": "TimeoutJs",
-        "name": "",
-        "options": {
-            "getTime": [
-                "() => {",
-                "    return 5000;",
                 "}"
             ]
         },
